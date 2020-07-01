@@ -5,6 +5,7 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import dotenv from "dotenv-safe";
 import morgan from "morgan";
+import routes from "../routes/routes";
 
 dotenv.config();
 const app = Express();
@@ -18,6 +19,7 @@ const StartServer = () => {
     app.use(Express.json());
     app.use(bodyParser.urlencoded({ extended: true }));
     app.use(bodyParser.json());
+    app.use(routes);
 
     HTTPSERVER.listen(PORT)
       .on("listening", () => {
