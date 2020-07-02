@@ -1,12 +1,23 @@
-const username = process.env.USERNAME;
-const password = process.env.PASSWORD;
-const database = process.env.DATABASE;
-const host = process.env.HOST;
-
 module.exports = {
-  username: "root",
-  password: "",
-  database: "rpg-simplify",
-  host: "127.0.0.1",
-  dialect: "mysql",
+  development: {
+    username: "root",
+    password: null,
+    database: "rpg-simplify",
+    host: "127.0.0.1",
+    dialect: "mysql",
+  },
+  test: {
+    username: "root",
+    password: null,
+    database: "database_test",
+    host: "127.0.0.1",
+    dialect: "mysql",
+  },
+  production: {
+    username: "root",
+    password: null,
+    database: "database_production",
+    host: "127.0.0.1",
+    dialect: "mysql",
+  },
 };

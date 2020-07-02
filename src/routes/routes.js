@@ -1,7 +1,8 @@
 import Express from "express";
+import User from "./User";
 
 const app = Express();
 
-app.use(require("./User"));
+app.use(User);
 
 export default app;
