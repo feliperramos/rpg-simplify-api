@@ -26,7 +26,6 @@ class UserController {
 
   async store(req, res) {
     try {
-      console.log(req.body);
       let encrypt = Cipher(req.body.password);
 
       let data = {
