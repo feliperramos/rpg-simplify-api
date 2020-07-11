@@ -1,5 +1,5 @@
 const UserExpertise = (sequelize, DataTypes) => {
-  const userExpertise = sequelize.define("UserExpertise", {
+  const userExpertise = sequelize.define("UsersExpertise", {
     userID: DataTypes.INTEGER,
     groupID: DataTypes.INTEGER,
     lvl: DataTypes.INTEGER,

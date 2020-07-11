@@ -1,5 +1,5 @@
-const UserInfo = (sequelize, DataTypes) => {
-  const userInfo = sequelize.define("UserInfo", {
+const UsersInfo = (sequelize, DataTypes) => {
+  const userInfo = sequelize.define("UsersInfo", {
     userID: DataTypes.INTEGER,
     groupID: DataTypes.INTEGER,
     name: DataTypes.STRING,
@@ -19,4 +19,4 @@ const UserInfo = (sequelize, DataTypes) => {
   return userInfo;
 };
 
-module.exports = UserInfo;
+module.exports = UsersInfo;

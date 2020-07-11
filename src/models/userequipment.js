@@ -1,5 +1,5 @@
 const UserEquipment = (sequelize, DataTypes) => {
-  const userEquipment = sequelize.define("UserEquipment", {
+  const userEquipment = sequelize.define("UsersEquipment", {
     userID: DataTypes.INTEGER,
     groupID: DataTypes.INTEGER,
     chain: DataTypes.STRING,

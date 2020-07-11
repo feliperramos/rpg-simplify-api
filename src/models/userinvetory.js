@@ -1,5 +1,5 @@
-const UserInventory = (sequelize, DataTypes) => {
-  const userInventory = sequelize.define("UserInventory", {
+const UsersInventory = (sequelize, DataTypes) => {
+  const userInventory = sequelize.define("UsersInventory", {
     userID: DataTypes.INTEGER,
     groupID: DataTypes.INTEGER,
     qtt: DataTypes.INTEGER,
@@ -10,4 +10,4 @@ const UserInventory = (sequelize, DataTypes) => {
   return userInventory;
 };
 
-module.exports = UserInventory;
+module.exports = UsersInventory;

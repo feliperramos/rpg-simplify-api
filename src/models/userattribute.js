@@ -1,5 +1,5 @@
 const UserAttribute = (sequelize, DataTypes) => {
-  const userAttribute = sequelize.define("UserAttribute", {
+  const userAttribute = sequelize.define("UsersAttribute", {
     userID: DataTypes.INTEGER,
     groupID: DataTypes.INTEGER,
     strength: DataTypes.INTEGER,

@@ -1,11 +1,11 @@
-import { UserLevel } from "../models";
+import { UsersLevel } from "../models";
 
 import jwt from "jsonwebtoken";
 
 class UserLevelController {
   async index(req, res) {
     try {
-      const userLevel = await UserLevel.findAll();
+      const userLevel = await UsersLevel.findAll();
 
       return res.json({ status: true, data: userLevel });
     } catch (error) {
@@ -15,7 +15,7 @@ class UserLevelController {
 
   async show(req, res) {
     try {
-      const userLevel = await UserLevel.findByPk(req.params.id);
+      const userLevel = await UsersLevel.findByPk(req.params.id);
 
       return res.json({ status: true, data: userLevel });
     } catch (error) {
@@ -25,7 +25,7 @@ class UserLevelController {
 
   async store(req, res) {
     try {
-      const userLevel = await UserLevel.create(req.body);
+      const userLevel = await UsersLevel.create(req.body);
 
       return res.json({ status: true, data: userLevel });
     } catch (error) {
@@ -35,7 +35,7 @@ class UserLevelController {
 
   async update(req, res) {
     try {
-      const userLevel = await UserLevel.findByPk(req.params.id);
+      const userLevel = await UsersLevel.findByPk(req.params.id);
 
       await userLevel.update(req.body);
 
@@ -47,7 +47,7 @@ class UserLevelController {
 
   async destroy(req, res) {
     try {
-      const userLevel = await UserLevel.findByPk(req.params.id);
+      const userLevel = await UsersLevel.findByPk(req.params.id);
 
       await userLevel.destroy();
 

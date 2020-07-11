@@ -1,11 +1,11 @@
-import { UserEquipment } from "../models";
+import { UsersEquipment } from "../models";
 
 import jwt from "jsonwebtoken";
 
 class UserEquipmentController {
   async index(req, res) {
     try {
-      const userEquipment = await UserEquipment.findAll();
+      const userEquipment = await UsersEquipment.findAll();
 
       return res.json({ status: true, data: userEquipment });
     } catch (error) {
@@ -15,7 +15,7 @@ class UserEquipmentController {
 
   async show(req, res) {
     try {
-      const userEquipment = await UserEquipment.findByPk(req.params.id);
+      const userEquipment = await UsersEquipment.findByPk(req.params.id);
 
       return res.json({ status: true, data: userEquipment });
     } catch (error) {
@@ -25,7 +25,7 @@ class UserEquipmentController {
 
   async store(req, res) {
     try {
-      const userEquipment = await UserEquipment.create(req.body);
+      const userEquipment = await UsersEquipment.create(req.body);
 
       return res.json({ status: true, data: userEquipment });
     } catch (error) {
@@ -35,7 +35,7 @@ class UserEquipmentController {
 
   async update(req, res) {
     try {
-      const userEquipment = await UserEquipment.findByPk(req.params.id);
+      const userEquipment = await UsersEquipment.findByPk(req.params.id);
 
       await userEquipment.update(req.body);
 
@@ -47,7 +47,7 @@ class UserEquipmentController {
 
   async destroy(req, res) {
     try {
-      const userEquipment = await UserEquipment.findByPk(req.params.id);
+      const userEquipment = await UsersEquipment.findByPk(req.params.id);
 
       await userEquipment.destroy();
 

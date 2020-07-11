@@ -1,11 +1,11 @@
-import { UserAttribute } from "../models";
+import { UsersAttribute } from "../models";
 
 import jwt from "jsonwebtoken";
 
 class UserAttributeController {
   async index(req, res) {
     try {
-      const userAttribute = await UserAttribute.findAll();
+      const userAttribute = await UsersAttribute.findAll();
 
       return res.json({ status: true, data: userAttribute });
     } catch (error) {
@@ -15,7 +15,7 @@ class UserAttributeController {
 
   async show(req, res) {
     try {
-      const userAttribute = await UserAttribute.findByPk(req.params.id);
+      const userAttribute = await UsersAttribute.findByPk(req.params.id);
 
       return res.json({ status: true, data: userAttribute });
     } catch (error) {
@@ -25,7 +25,7 @@ class UserAttributeController {
 
   async store(req, res) {
     try {
-      const userAttribute = await UserAttribute.create(req.body);
+      const userAttribute = await UsersAttribute.create(req.body);
 
       return res.json({ status: true, data: userAttribute });
     } catch (error) {
@@ -35,7 +35,7 @@ class UserAttributeController {
 
   async update(req, res) {
     try {
-      const userAttribute = await UserAttribute.findByPk(req.params.id);
+      const userAttribute = await UsersAttribute.findByPk(req.params.id);
 
       await userAttribute.update(req.body);
 
@@ -47,7 +47,7 @@ class UserAttributeController {
 
   async destroy(req, res) {
     try {
-      const userAttribute = await UserAttribute.findByPk(req.params.id);
+      const userAttribute = await UsersAttribute.findByPk(req.params.id);
 
       await userAttribute.destroy();
 

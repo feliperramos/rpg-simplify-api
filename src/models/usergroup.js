@@ -1,5 +1,5 @@
 const UserGroup = (sequelize, DataTypes) => {
-  const userGroup = sequelize.define("UserGroup", {
+  const userGroup = sequelize.define("UsersGroup", {
     userID: DataTypes.INTEGER,
     groupID: DataTypes.INTEGER,
     hierarchyID: DataTypes.INTEGER,

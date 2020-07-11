@@ -1,5 +1,5 @@
-const UserHierarchy = (sequelize, DataTypes) => {
-  const userHierarchy = sequelize.define("UserHierarchy", {
+const UsersHierarchy = (sequelize, DataTypes) => {
+  const userHierarchy = sequelize.define("UsersHierarchy", {
     userID: DataTypes.INTEGER,
     userType: DataTypes.INTEGER,
   });
@@ -7,4 +7,4 @@ const UserHierarchy = (sequelize, DataTypes) => {
   return userHierarchy;
 };
 
-module.exports = UserHierarchy;
+module.exports = UsersHierarchy;

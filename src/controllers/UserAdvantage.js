@@ -1,11 +1,11 @@
-import { UserAdvantage } from "../models";
+import { UsersAdvantage } from "../models";
 
 import jwt from "jsonwebtoken";
 
 class UserAdvantageController {
   async index(req, res) {
     try {
-      const userAdvantage = await UserAdvantage.findAll();
+      const userAdvantage = await UsersAdvantage.findAll();
 
       return res.json({ status: true, data: userAdvantage });
     } catch (error) {
@@ -15,7 +15,7 @@ class UserAdvantageController {
 
   async show(req, res) {
     try {
-      const userAdvantage = await UserAdvantage.findByPk(req.params.id);
+      const userAdvantage = await UsersAdvantage.findByPk(req.params.id);
 
       return res.json({ status: true, data: userAdvantage });
     } catch (error) {
@@ -25,7 +25,7 @@ class UserAdvantageController {
 
   async store(req, res) {
     try {
-      const userAdvantage = await UserAdvantage.create(req.body);
+      const userAdvantage = await UsersAdvantage.create(req.body);
 
       return res.json({ status: true, data: userAdvantage });
     } catch (error) {
@@ -35,7 +35,7 @@ class UserAdvantageController {
 
   async update(req, res) {
     try {
-      const userAdvantage = await UserAdvantage.findByPk(req.params.id);
+      const userAdvantage = await UsersAdvantage.findByPk(req.params.id);
 
       await userAdvantage.update(req.body);
 
@@ -47,7 +47,7 @@ class UserAdvantageController {
 
   async destroy(req, res) {
     try {
-      const userAdvantage = await UserAdvantage.findByPk(req.params.id);
+      const userAdvantage = await UsersAdvantage.findByPk(req.params.id);
 
       await userAdvantage.destroy();
 

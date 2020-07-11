@@ -1,9 +1,9 @@
-const UserType = (sequelize, DataTypes) => {
-  const userType = sequelize.define("UserType", {
+const UsersType = (sequelize, DataTypes) => {
+  const userType = sequelize.define("UsersType", {
     name: DataTypes.STRING,
   });
 
   return userType;
 };
 
-module.exports = UserType;
+module.exports = UsersType;

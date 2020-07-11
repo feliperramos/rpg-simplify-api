@@ -1,11 +1,11 @@
-import { UserType } from "../models";
+import { UsersType } from "../models";
 
 import jwt from "jsonwebtoken";
 
 class UserTypeController {
   async index(req, res) {
     try {
-      const userType = await UserType.findAll();
+      const userType = await UsersType.findAll();
 
       return res.json({ status: true, data: userType });
     } catch (error) {
@@ -15,7 +15,7 @@ class UserTypeController {
 
   async show(req, res) {
     try {
-      const userType = await UserType.findByPk(req.params.id);
+      const userType = await UsersType.findByPk(req.params.id);
 
       return res.json({ status: true, data: userType });
     } catch (error) {
@@ -25,7 +25,7 @@ class UserTypeController {
 
   async store(req, res) {
     try {
-      const userType = await UserType.create(req.body);
+      const userType = await UsersType.create(req.body);
 
       return res.json({ status: true, data: userType });
     } catch (error) {
@@ -35,7 +35,7 @@ class UserTypeController {
 
   async update(req, res) {
     try {
-      const userType = await UserType.findByPk(req.params.id);
+      const userType = await UsersType.findByPk(req.params.id);
 
       await userType.update(req.body);
 
@@ -47,7 +47,7 @@ class UserTypeController {
 
   async destroy(req, res) {
     try {
-      const userType = await UserType.findByPk(req.params.id);
+      const userType = await UsersType.findByPk(req.params.id);
 
       await userType.destroy();
 

@@ -1,5 +1,5 @@
-const UserSkill = (sequelize, DataTypes) => {
-  const userSkill = sequelize.define("UserSkill", {
+const UsersSkill = (sequelize, DataTypes) => {
+  const userSkill = sequelize.define("UsersSkill", {
     userID: DataTypes.INTEGER,
     groupID: DataTypes.INTEGER,
     skills: DataTypes.TEXT,
@@ -9,4 +9,4 @@ const UserSkill = (sequelize, DataTypes) => {
   return userSkill;
 };
 
-module.exports = UserSkill;
+module.exports = UsersSkill;

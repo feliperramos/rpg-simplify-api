@@ -1,11 +1,11 @@
-import { UserHierarchy } from "../models";
+import { UsersHierarchy } from "../models";
 
 import jwt from "jsonwebtoken";
 
 class UserHierarchyController {
   async index(req, res) {
     try {
-      const userHierarchy = await UserHierarchy.findAll();
+      const userHierarchy = await UsersHierarchy.findAll();
 
       return res.json({ status: true, data: userHierarchy });
     } catch (error) {
@@ -15,7 +15,7 @@ class UserHierarchyController {
 
   async show(req, res) {
     try {
-      const userHierarchy = await UserHierarchy.findByPk(req.params.id);
+      const userHierarchy = await UsersHierarchy.findByPk(req.params.id);
 
       return res.json({ status: true, data: userHierarchy });
     } catch (error) {
@@ -25,7 +25,7 @@ class UserHierarchyController {
 
   async store(req, res) {
     try {
-      const userHierarchy = await UserHierarchy.create(req.body);
+      const userHierarchy = await UsersHierarchy.create(req.body);
 
       return res.json({ status: true, data: userHierarchy });
     } catch (error) {
@@ -35,7 +35,7 @@ class UserHierarchyController {
 
   async update(req, res) {
     try {
-      const userHierarchy = await UserHierarchy.findByPk(req.params.id);
+      const userHierarchy = await UsersHierarchy.findByPk(req.params.id);
 
       await userHierarchy.update(req.body);
 
@@ -47,7 +47,7 @@ class UserHierarchyController {
 
   async destroy(req, res) {
     try {
-      const userHierarchy = await UserHierarchy.findByPk(req.params.id);
+      const userHierarchy = await UsersHierarchy.findByPk(req.params.id);
 
       await userHierarchy.destroy();
 

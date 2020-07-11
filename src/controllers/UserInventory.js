@@ -1,11 +1,11 @@
-import { UserInventory } from "../models";
+import { UsersInventory } from "../models";
 
 import jwt from "jsonwebtoken";
 
 class UserInventoryController {
   async index(req, res) {
     try {
-      const userInventory = await UserInventory.findAll();
+      const userInventory = await UsersInventory.findAll();
 
       return res.json({ status: true, data: userInventory });
     } catch (error) {
@@ -15,7 +15,7 @@ class UserInventoryController {
 
   async show(req, res) {
     try {
-      const userInventory = await UserInventory.findByPk(req.params.id);
+      const userInventory = await UsersInventory.findByPk(req.params.id);
 
       return res.json({ status: true, data: userInventory });
     } catch (error) {
@@ -25,7 +25,7 @@ class UserInventoryController {
 
   async store(req, res) {
     try {
-      const userInventory = await UserInventory.create(req.body);
+      const userInventory = await UsersInventory.create(req.body);
 
       return res.json({ status: true, data: userInventory });
     } catch (error) {
@@ -35,7 +35,7 @@ class UserInventoryController {
 
   async update(req, res) {
     try {
-      const userInventory = await UserInventory.findByPk(req.params.id);
+      const userInventory = await UsersInventory.findByPk(req.params.id);
 
       await userInventory.update(req.body);
 
@@ -47,7 +47,7 @@ class UserInventoryController {
 
   async destroy(req, res) {
     try {
-      const userInventory = await UserInventory.findByPk(req.params.id);
+      const userInventory = await UsersInventory.findByPk(req.params.id);
 
       await userInventory.destroy();
 

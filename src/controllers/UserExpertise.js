@@ -1,11 +1,11 @@
-import { UserExpertise } from "../models";
+import { UsersExpertise } from "../models";
 
 import jwt from "jsonwebtoken";
 
 class UserExpertiseController {
   async index(req, res) {
     try {
-      const userExpertise = await UserExpertise.findAll();
+      const userExpertise = await UsersExpertise.findAll();
 
       return res.json({ status: true, data: userExpertise });
     } catch (error) {
@@ -15,7 +15,7 @@ class UserExpertiseController {
 
   async show(req, res) {
     try {
-      const userExpertise = await UserExpertise.findByPk(req.params.id);
+      const userExpertise = await UsersExpertise.findByPk(req.params.id);
 
       return res.json({ status: true, data: userExpertise });
     } catch (error) {
@@ -25,7 +25,7 @@ class UserExpertiseController {
 
   async store(req, res) {
     try {
-      const userExpertise = await UserExpertise.create(req.body);
+      const userExpertise = await UsersExpertise.create(req.body);
 
       return res.json({ status: true, data: userExpertise });
     } catch (error) {
@@ -35,7 +35,7 @@ class UserExpertiseController {
 
   async update(req, res) {
     try {
-      const userExpertise = await UserExpertise.findByPk(req.params.id);
+      const userExpertise = await UsersExpertise.findByPk(req.params.id);
 
       await userExpertise.update(req.body);
 
@@ -47,7 +47,7 @@ class UserExpertiseController {
 
   async destroy(req, res) {
     try {
-      const userExpertise = await UserExpertise.findByPk(req.params.id);
+      const userExpertise = await UsersExpertise.findByPk(req.params.id);
 
       await userExpertise.destroy();
 

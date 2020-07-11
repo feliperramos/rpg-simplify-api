@@ -25,6 +25,7 @@ app.use(Auth);
 app.use(Group);
 app.use(UserGroup);
 app.use(UserHierarchy);
+app.use(UserType);
 app.use(Level);
 app.use(UserAdvantage);
 app.use(UserAnnotation);

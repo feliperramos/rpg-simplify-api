@@ -1,11 +1,11 @@
-import { UserAnnotation } from "../models";
+import { UsersAnnotation } from "../models";
 
 import jwt from "jsonwebtoken";
 
 class UserAnnotationController {
   async index(req, res) {
     try {
-      const userAnnotation = await UserAnnotation.findAll();
+      const userAnnotation = await UsersAnnotation.findAll();
 
       return res.json({ status: true, data: userAnnotation });
     } catch (error) {
@@ -15,7 +15,7 @@ class UserAnnotationController {
 
   async show(req, res) {
     try {
-      const userAnnotation = await UserAnnotation.findByPk(req.params.id);
+      const userAnnotation = await UsersAnnotation.findByPk(req.params.id);
 
       return res.json({ status: true, data: userAnnotation });
     } catch (error) {
@@ -25,7 +25,7 @@ class UserAnnotationController {
 
   async store(req, res) {
     try {
-      const userAnnotation = await UserAnnotation.create(req.body);
+      const userAnnotation = await UsersAnnotation.create(req.body);
 
       return res.json({ status: true, data: userAnnotation });
     } catch (error) {
@@ -35,7 +35,7 @@ class UserAnnotationController {
 
   async update(req, res) {
     try {
-      const userAnnotation = await UserAnnotation.findByPk(req.params.id);
+      const userAnnotation = await UsersAnnotation.findByPk(req.params.id);
 
       await userAnnotation.update(req.body);
 
@@ -47,7 +47,7 @@ class UserAnnotationController {
 
   async destroy(req, res) {
     try {
-      const userAnnotation = await UserAnnotation.findByPk(req.params.id);
+      const userAnnotation = await UsersAnnotation.findByPk(req.params.id);
 
       await userAnnotation.destroy();
 

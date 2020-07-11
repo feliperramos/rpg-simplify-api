@@ -1,5 +1,5 @@
 const UserAdvantage = (sequelize, DataTypes) => {
-  const userAdvantage = sequelize.define("UserAdvantage", {
+  const userAdvantage = sequelize.define("UsersAdvantage", {
     userID: DataTypes.INTEGER,
     groupID: DataTypes.INTEGER,
     description: DataTypes.TEXT,

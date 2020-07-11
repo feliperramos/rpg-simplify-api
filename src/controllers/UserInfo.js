@@ -1,11 +1,11 @@
-import { UserInfo } from "../models";
+import { UsersInfo } from "../models";
 
 import jwt from "jsonwebtoken";
 
 class UserInfoController {
   async index(req, res) {
     try {
-      const userInfo = await UserInfo.findAll();
+      const userInfo = await UsersInfo.findAll();
 
       return res.json({ status: true, data: userInfo });
     } catch (error) {
@@ -15,7 +15,7 @@ class UserInfoController {
 
   async show(req, res) {
     try {
-      const userInfo = await UserInfo.findByPk(req.params.id);
+      const userInfo = await UsersInfo.findByPk(req.params.id);
 
       return res.json({ status: true, data: userInfo });
     } catch (error) {
@@ -25,7 +25,7 @@ class UserInfoController {
 
   async store(req, res) {
     try {
-      const userInfo = await UserInfo.create(req.body);
+      const userInfo = await UsersInfo.create(req.body);
 
       return res.json({ status: true, data: userInfo });
     } catch (error) {
@@ -35,7 +35,7 @@ class UserInfoController {
 
   async update(req, res) {
     try {
-      const userInfo = await UserInfo.findByPk(req.params.id);
+      const userInfo = await UsersInfo.findByPk(req.params.id);
 
       await userInfo.update(req.body);
 
@@ -47,7 +47,7 @@ class UserInfoController {
 
   async destroy(req, res) {
     try {
-      const userInfo = await UserInfo.findByPk(req.params.id);
+      const userInfo = await UsersInfo.findByPk(req.params.id);
 
       await userInfo.destroy();
 

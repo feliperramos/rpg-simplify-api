@@ -1,5 +1,5 @@
-const UserLevel = (sequelize, DataTypes) => {
-  const userLevel = sequelize.define("UserLevel", {
+const UsersLevel = (sequelize, DataTypes) => {
+  const userLevel = sequelize.define("UsersLevel", {
     userID: DataTypes.INTEGER,
     groupID: DataTypes.INTEGER,
     level: DataTypes.INTEGER,
@@ -9,4 +9,4 @@ const UserLevel = (sequelize, DataTypes) => {
   return userLevel;
 };
 
-module.exports = UserLevel;
+module.exports = UsersLevel;

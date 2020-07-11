@@ -1,11 +1,11 @@
-import { UserSkill } from "../models";
+import { UsersSkill } from "../models";
 
 import jwt from "jsonwebtoken";
 
 class UserSkillController {
   async index(req, res) {
     try {
-      const userSkill = await UserSkill.findAll();
+      const userSkill = await UsersSkill.findAll();
 
       return res.json({ status: true, data: userLevel });
     } catch (error) {
@@ -15,7 +15,7 @@ class UserSkillController {
 
   async show(req, res) {
     try {
-      const userSkill = await UserSkill.findByPk(req.params.id);
+      const userSkill = await UsersSkill.findByPk(req.params.id);
 
       return res.json({ status: true, data: userSkill });
     } catch (error) {
@@ -25,7 +25,7 @@ class UserSkillController {
 
   async store(req, res) {
     try {
-      const userSkill = await UserSkill.create(req.body);
+      const userSkill = await UsersSkill.create(req.body);
 
       return res.json({ status: true, data: userSkill });
     } catch (error) {
@@ -35,7 +35,7 @@ class UserSkillController {
 
   async update(req, res) {
     try {
-      const userSkill = await UserSkill.findByPk(req.params.id);
+      const userSkill = await UsersSkill.findByPk(req.params.id);
 
       await userSkill.update(req.body);
 
@@ -47,7 +47,7 @@ class UserSkillController {
 
   async destroy(req, res) {
     try {
-      const userSkill = await UserSkill.findByPk(req.params.id);
+      const userSkill = await UsersSkill.findByPk(req.params.id);
 
       await userSkill.destroy();
 
