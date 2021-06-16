@@ -13,6 +13,7 @@ class AuthController {
       });
 
       const encrypt = { encrypted: user.password, iv: user.iv, key: user.key };
+      console.log(encrypt);
 
       const decrypted = Decipher(encrypt);
 
