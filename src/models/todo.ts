@@ -29,9 +29,4 @@ todoSchema.statics.build = (attr: ITodo) => new ToDo(attr);
 
 const ToDo = mongoose.model<TodoDoc, todoModelInterface>("Todo", todoSchema);
 
-ToDo.build({
-  title: "Some Text",
-  description: "Some Description",
-});
-
 export { ToDo };
