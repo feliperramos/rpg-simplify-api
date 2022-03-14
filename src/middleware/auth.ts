@@ -2,10 +2,6 @@ import { NextFunction, Request, Response } from "express";
 import jwt from "jsonwebtoken";
 import AuthConfig from "../config/auth.json";
 
-interface JwtPayLoad {
-  _id: string;
-}
-
 export const Authentication = (
   req: Request,
   res: Response,
@@ -22,14 +18,17 @@ export const Authentication = (
   if (!/^Bearer$/i.test(scheme))
     return res.status(401).json({ error: "Token malformatted" });
 
-  // need to verify the token validation to authenticate right
-  const decoded = jwt.verify(token, AuthConfig.secret) as JwtPayLoad;
+  let decoded = {};
+  try {
+    decoded = jwt.verify(token, AuthConfig.secret);
+  } catch (err) {
+    console.log(err);
+  }
 
-  jwt.verify(token, AuthConfig.secret, (err, decoded) => {
-    if (err) return res.status(401).json({ error: "Token invalid" });
+  const hasUserId = (decoded: any): decoded is jwt.JwtPayload =>
+    "userId" in decoded;
 
-    req.user.id = decoded?.id!;
-
-    return next();
-  });
+  if (!hasUserId(decoded))
+    return res.status(401).json({ error: "User not found" });
+  else next();
 };
