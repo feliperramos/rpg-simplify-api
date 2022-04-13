@@ -10,7 +10,13 @@ router.get("/users", [], async (req: Request, res: Response) => {
   return res.status(200).json(users);
 });
 
-router.get("/api/users/:id", [], async (req: Request, res: Response) => {});
+router.get("/users/:id", [], async (req: Request, res: Response) => {
+  const users = await User.findOne({ id: req.params.id });
+
+  console.log(users);
+
+  return res.status(200).json(users);
+});
 
 router.post("/users", [], async (req: Request, res: Response) => {
   const { email, password, name } = req.body;
